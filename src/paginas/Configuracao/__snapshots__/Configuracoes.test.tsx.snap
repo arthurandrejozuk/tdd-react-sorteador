@@ -2,7 +2,10 @@
 
 exports[`Página de configuração Deve ser renderizada corretamente 1`] = `
 <div>
-  <form>
+  <form
+    class="sc-bRKDuR dOjqJM"
+    role="form"
+  >
     <input
       placeholder="Insira os nomes dos participantes"
       type="text"
@@ -14,13 +17,27 @@ exports[`Página de configuração Deve ser renderizada corretamente 1`] = `
       Adicionar
     </button>
   </form>
-  <ul />
-  <footer>
+  <ul
+    role="listbox"
+  />
+  <footer
+    class="sc-fhHczv dcgwbo"
+  >
     <button
       disabled=""
     >
-      Iniciar brincadeira
+      <img
+        alt=""
+        src="/assets/Play.png"
+      />
+      <p>
+        Iniciar brincadeira!
+      </p>
     </button>
+    <img
+      alt=""
+      src="/assets/Bags.png"
+    />
   </footer>
 </div>
 `;
