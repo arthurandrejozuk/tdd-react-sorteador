@@ -6,7 +6,7 @@ export const useAdicionarParticipante = () => {
     const lista = useRecoilValue(listaParticipantesState);
     const setErro = useSetRecoilState(erroState);
     return (nomeParticipante: string) => {
-        if(lista){
+        if(lista.includes(nomeParticipante)){
             setErro("Nomes duplicados não são permitidos!");
             setTimeout(() => {
                 setErro("")

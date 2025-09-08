@@ -34,7 +34,7 @@ const FormularioComLista = () => {
         <Styled>
             <h3>Vamos começar!</h3>
             <Formulario />
-           {listaDeParticpantes ? <Rodape/> :<ListaParticipantes/>}
+            {listaDeParticpantes && <ListaParticipantes />} 
         </Styled>
     )   
 }

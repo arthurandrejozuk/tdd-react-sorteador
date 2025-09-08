@@ -9,7 +9,8 @@ const Styled = styled.footer`
     margin-top: 32px ;
     display: flex;
     align-items: center;
-    gap: 32px;
+    justify-content: center;
+    gap: 120px;
     padding-bottom: 40px;
     button{
         padding: 12px 28px;
@@ -29,7 +30,7 @@ const Styled = styled.footer`
 
 `
 
-const Rodape = () => {
+const Rodape = ({noButton}: {noButton: boolean}) => {
     const participantes = useListaParticipantes();
 
     const navigate = useNavigate();
@@ -44,10 +45,10 @@ const Rodape = () => {
 
     return(
         <Styled>
-            <button onClick={iniciar} disabled={participantes.length < 3 ? true : false}>
+            {noButton ? <></> : <button onClick={iniciar} disabled={participantes.length < 3 ? true : false}>
                 <img src="/assets/Play.png" alt="" />
                 <p>Iniciar brincadeira!</p>       
-            </button>
+            </button>}
             <img src="/assets/Bags.png" alt="" />
         </Styled>
     )

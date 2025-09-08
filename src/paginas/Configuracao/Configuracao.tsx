@@ -7,7 +7,7 @@ const Configuracao = () => {
         <>
             <Formulario/>
             <ListaParticipantes/>
-            <Rodape />
+            <Rodape noButton={false} />
         </>
     )
 }

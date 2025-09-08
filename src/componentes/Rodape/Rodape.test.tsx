@@ -29,9 +29,9 @@ jest.mock("react-router-dom", () => {
 describe("onde não existe participantes suficientes", () => {
     beforeEach(() => {
         (useListaParticipantes as jest.Mock).mockReturnValue([])
-    })
+    }) 
     test("A brincadeira não pode ser iniciada", () => {
-        render(<RecoilRoot><Rodape/></RecoilRoot>)
+        render(<RecoilRoot><Rodape noButton={false}/></RecoilRoot>)
         const botao = screen.getByRole("button")
         expect(botao).toBeDisabled();
     })
@@ -43,12 +43,12 @@ describe("quando existem participantes suficientes", () => {
         (useListaParticipantes as jest.Mock).mockReturnValue(participantes)
     })
     test("A brincadeira pode ser iniciada", () => {
-        render(<RecoilRoot><Rodape/></RecoilRoot>)
+        render(<RecoilRoot><Rodape noButton={false} /></RecoilRoot>)
         const botao = screen.getByRole("button");
         expect(botao).toBeEnabled();
     })
     test("A brincadeira foi iniciada",() => {
-        render(<RecoilRoot><Rodape /></RecoilRoot>)
+        render(<RecoilRoot><Rodape noButton={false} /></RecoilRoot>)
         const botao = screen.getByRole("button")
         fireEvent.click(botao)
         expect(mockNavegacao).toHaveBeenCalled()
